@@ -135,7 +135,7 @@ HERO
 }
 
 .hero-content h2{
-    font-size:70px;
+    font-size:clamp(38px,8vw,70px);
     color:#60a5fa;
     margin-bottom:20px;
 }
@@ -334,6 +334,46 @@ CONTACTO
 }
 
 /* =========================
+WHATSAPP FLOTANTE
+========================= */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    left:20px;
+    bottom:20px;
+
+    width:70px;
+    height:70px;
+
+    background:#25d366;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:38px;
+
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+
+    transition:0.3s;
+}
+
+.whatsapp-float:hover{
+
+    transform:scale(1.1);
+}
+
+/* =========================
 CHAT FLOTANTE
 ========================= */
 
@@ -345,8 +385,6 @@ CHAT FLOTANTE
 
     z-index:9999;
 }
-
-/* MUÑEQUITO */
 
 .chat-bot{
     width:85px;
@@ -369,8 +407,6 @@ CHAT FLOTANTE
     }
 }
 
-/* CHAT */
-
 .chat-box{
     width:330px;
 
@@ -385,8 +421,6 @@ CHAT FLOTANTE
     box-shadow:0 0 25px rgba(0,0,0,0.3);
 }
 
-/* HEADER CHAT */
-
 .chat-header{
     background:#2563eb;
 
@@ -399,8 +433,6 @@ CHAT FLOTANTE
     font-weight:bold;
 }
 
-/* BOTÓN MINIMIZAR */
-
 #toggleChat{
     background:none;
     border:none;
@@ -411,8 +443,6 @@ CHAT FLOTANTE
 
     cursor:pointer;
 }
-
-/* MENSAJES */
 
 .messages{
     height:260px;
@@ -448,8 +478,6 @@ CHAT FLOTANTE
 
     align-self:flex-start;
 }
-
-/* INPUT */
 
 .chat-input{
     display:flex;
@@ -497,17 +525,14 @@ footer{
 
 <body>
 
-<!-- =========================
-HEADER
-========================= -->
-
 <header>
 
     <div class="logo-area">
 
         <img
         src="red tech soluciones.png"
-        class="logo">
+        class="logo"
+        alt="Logo Red Tech">
 
         <h1>RED TECH</h1>
 
@@ -528,10 +553,6 @@ HEADER
     </nav>
 
 </header>
-
-<!-- =========================
-HERO
-========================= -->
 
 <section class="hero" id="inicio">
 
@@ -555,10 +576,6 @@ HERO
 
 </section>
 
-<!-- =========================
-SERVICIOS
-========================= -->
-
 <section id="servicios">
 
     <h2 class="section-title">
@@ -568,8 +585,6 @@ SERVICIOS
     </h2>
 
     <div class="cards">
-
-        <!-- CARD 1 -->
 
         <div class="card"
 
@@ -584,7 +599,8 @@ SERVICIOS
         )">
 
             <img
-            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200">
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200"
+            alt="Mantenimiento">
 
             <div class="card-content">
 
@@ -600,8 +616,6 @@ SERVICIOS
 
         </div>
 
-        <!-- CARD 2 -->
-
         <div class="card"
 
         onclick="openModal(
@@ -615,7 +629,8 @@ SERVICIOS
         )">
 
             <img
-            src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200">
+            src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200"
+            alt="Repuestos">
 
             <div class="card-content">
 
@@ -631,8 +646,6 @@ SERVICIOS
 
         </div>
 
-        <!-- CARD 3 -->
-
         <div class="card"
 
         onclick="openModal(
@@ -646,7 +659,8 @@ SERVICIOS
         )">
 
             <img
-            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200">
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200"
+            alt="Software">
 
             <div class="card-content">
 
@@ -666,10 +680,6 @@ SERVICIOS
 
 </section>
 
-<!-- =========================
-CONTACTO
-========================= -->
-
 <section class="contact" id="contacto">
 
     <h2 class="section-title">
@@ -680,21 +690,34 @@ CONTACTO
 
     <div class="contact-container">
 
-        <!-- TEL -->
-
         <div class="contact-box">
 
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-brands fa-whatsapp"></i>
 
-            <h3>Teléfono</h3>
+            <h3>WhatsApp</h3>
 
-            <p>
-                +57 300 123 4567
-            </p>
+            <a href="https://wa.me/573504555680"
+            target="_blank">
+
+                +57 350 455 5680
+
+            </a>
 
         </div>
 
-        <!-- INSTAGRAM -->
+        <div class="contact-box">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <h3>Correo</h3>
+
+            <a href="mailto:redtech0989@outlook.com">
+
+                redtech0989@outlook.com
+
+            </a>
+
+        </div>
 
         <div class="contact-box">
 
@@ -702,16 +725,14 @@ CONTACTO
 
             <h3>Instagram</h3>
 
-            <a href="https://instagram.com/"
+            <a href="https://www.instagram.com/redtech0889?igsh=M3B3ZTIxMThmeThm"
             target="_blank">
 
-                @redtech_oficial
+                @redtech0889
 
             </a>
 
         </div>
-
-        <!-- FACEBOOK -->
 
         <div class="contact-box">
 
@@ -719,7 +740,7 @@ CONTACTO
 
             <h3>Facebook</h3>
 
-            <a href="https://facebook.com/"
+            <a href="https://www.facebook.com/share/1B5GFG2Js2/"
             target="_blank">
 
                 Red Tech Soluciones
@@ -728,18 +749,16 @@ CONTACTO
 
         </div>
 
-        <!-- TIKTOK -->
-
         <div class="contact-box">
 
             <i class="fa-brands fa-tiktok"></i>
 
             <h3>TikTok</h3>
 
-            <a href="https://tiktok.com/"
+            <a href="https://www.tiktok.com/@martinez_sam?_r=1&_t=ZS-96WHSoev7CB"
             target="_blank">
 
-                @redtech
+                @martinez_sam
 
             </a>
 
@@ -748,10 +767,6 @@ CONTACTO
     </div>
 
 </section>
-
-<!-- =========================
-MODAL
-========================= -->
 
 <div class="modal"
 id="modal">
@@ -777,9 +792,9 @@ id="modal">
 
             <div class="modal-images">
 
-                <img id="modalImg1">
+                <img id="modalImg1" alt="Servicio 1">
 
-                <img id="modalImg2">
+                <img id="modalImg2" alt="Servicio 2">
 
             </div>
 
@@ -789,86 +804,20 @@ id="modal">
 
 </div>
 
-<!-- =========================
-CHAT
-========================= -->
+<a
+href="https://wa.me/573504555680"
+target="_blank"
+class="whatsapp-float">
 
-<div class="chat-floating">
+    <i class="fa-brands fa-whatsapp"></i>
 
-    <!-- MUÑEQUITO -->
-
-    <img
-    src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
-    class="chat-bot">
-
-    <!-- CHAT -->
-
-    <div class="chat-box">
-
-        <!-- HEADER -->
-
-        <div class="chat-header">
-
-            <span>
-                Chat Red Tech 👋
-            </span>
-
-            <button id="toggleChat">
-
-                —
-
-            </button>
-
-        </div>
-
-        <!-- MENSAJES -->
-
-        <div class="messages"
-        id="messages">
-
-            <div class="message bot">
-
-                Hola 👋 Bienvenido a Red Tech
-
-            </div>
-
-        </div>
-
-        <!-- INPUT -->
-
-        <div class="chat-input">
-
-            <input
-            type="text"
-            id="messageInput"
-            placeholder="Escribe un mensaje...">
-
-            <button
-            onclick="sendMessage()">
-
-                Enviar
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- =========================
-FOOTER
-========================= -->
+</a>
 
 <footer>
 
-    © 2026 Red Tech Soluciones
+    © 2026 Red Tech Soluciones | Todos los derechos reservados
 
 </footer>
-
-<!-- =========================
-JAVASCRIPT
-========================= -->
 
 <script>
 
@@ -907,140 +856,11 @@ function closeModal(){
     modal.style.display = "none";
 }
 
-/* CERRAR AFUERA */
-
 window.onclick = function(event){
 
     if(event.target == modal){
 
         modal.style.display = "none";
-    }
-}
-
-/* CHAT */
-
-const messages =
-document.getElementById("messages");
-
-const input =
-document.getElementById("messageInput");
-
-function sendMessage(){
-
-    const text =
-    input.value.trim();
-
-    if(text === "") return;
-
-    const userMessage =
-    document.createElement("div");
-
-    userMessage.classList.add(
-    "message","user");
-
-    userMessage.innerText = text;
-
-    messages.appendChild(userMessage);
-
-    input.value = "";
-
-    messages.scrollTop =
-    messages.scrollHeight;
-
-    setTimeout(()=>{
-
-        const botMessage =
-        document.createElement("div");
-
-        botMessage.classList.add(
-        "message","bot");
-
-        botMessage.innerText =
-        getBotResponse(text);
-
-        messages.appendChild(botMessage);
-
-        messages.scrollTop =
-        messages.scrollHeight;
-
-    },1000);
-}
-
-/* ENTER */
-
-input.addEventListener("keypress",
-function(e){
-
-    if(e.key === "Enter"){
-
-        sendMessage();
-    }
-});
-
-/* RESPUESTAS */
-
-function getBotResponse(message){
-
-    message = message.toLowerCase();
-
-    if(message.includes("hola")){
-
-        return "Hola 👋 ¿Cómo podemos ayudarte?";
-    }
-
-    if(message.includes("precio")){
-
-        return "Los precios dependen del servicio.";
-    }
-
-    if(message.includes("mantenimiento")){
-
-        return "Realizamos mantenimiento preventivo y correctivo.";
-    }
-
-    if(message.includes("gracias")){
-
-        return "😊 Gracias por confiar en Red Tech.";
-    }
-
-    return "Tu mensaje fue recibido correctamente.";
-}
-
-/* MINIMIZAR CHAT */
-
-const toggleBtn =
-document.getElementById("toggleChat");
-
-const chatMessages =
-document.querySelector(".messages");
-
-const chatInput =
-document.querySelector(".chat-input");
-
-let abierto = true;
-
-toggleBtn.onclick = function(){
-
-    if(abierto){
-
-        chatMessages.style.display = "none";
-
-        chatInput.style.display = "none";
-
-        toggleBtn.innerHTML = "+";
-
-        abierto = false;
-    }
-
-    else{
-
-        chatMessages.style.display = "flex";
-
-        chatInput.style.display = "flex";
-
-        toggleBtn.innerHTML = "—";
-
-        abierto = true;
     }
 }
 
