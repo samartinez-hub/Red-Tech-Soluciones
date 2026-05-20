@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,15 +13,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <style>
 
-/* =========================
-GENERAL
-========================= */
+/* ========================= GENERAL ========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
     font-family:Arial,sans-serif;
 }
 
@@ -31,26 +27,18 @@ body{
     color:white;
 }
 
-/* =========================
-HEADER
-========================= */
+/* ========================= HEADER ========================= */
 
 header{
     width:100%;
     background:linear-gradient(90deg,#0f172a,#1e293b);
-
     padding:15px 30px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     position:fixed;
     top:0;
-
     z-index:1000;
-
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
 .logo-area{
@@ -64,11 +52,6 @@ header{
     height:65px;
     border-radius:50%;
     background:white;
-    padding:5px;
-}
-
-.logo-area h1{
-    font-size:30px;
 }
 
 nav{
@@ -80,70 +63,29 @@ nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    transition:0.3s;
 }
 
-nav a:hover{
-    color:#60a5fa;
-}
-
-/* =========================
-HERO
-========================= */
+/* ========================= HERO ========================= */
 
 .hero{
     height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-
     padding:20px;
-
-    background:
-    linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.85)),
+    background:linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.85)),
     url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200');
-
     background-size:cover;
-    background-position:center;
 }
 
-.hero-content{
-    max-width:850px;
-    margin-top:80px;
-}
-
-.hero-content h2{
-    font-size:clamp(38px,8vw,70px);
-    color:#60a5fa;
-    margin-bottom:20px;
-}
-
-.hero-content p{
-    font-size:22px;
-    line-height:1.8;
-    color:#dbeafe;
-}
-
-/* =========================
-SECCIONES
-========================= */
+/* ========================= SECCIONES ========================= */
 
 section{
     padding:90px 20px;
 }
 
-.section-title{
-    text-align:center;
-    font-size:45px;
-    color:#1e3a8a;
-    margin-bottom:50px;
-}
-
-/* =========================
-CARDS
-========================= */
+/* ========================= CARDS ========================= */
 
 .cards{
     display:grid;
@@ -153,42 +95,13 @@ CARDS
 
 .card{
     background:white;
+    color:black;
     border-radius:20px;
     overflow:hidden;
-
-    color:#111827;
-
     cursor:pointer;
-
-    transition:0.4s;
-
-    box-shadow:0 0 20px rgba(0,0,0,0.1);
 }
 
-.card:hover{
-    transform:translateY(-10px);
-
-    box-shadow:0 0 30px rgba(96,165,250,0.6);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:25px;
-}
-
-.card-content h3{
-    color:#2563eb;
-    margin-bottom:15px;
-}
-
-/* =========================
-CONTACTO
-========================= */
+/* ========================= CONTACTO ========================= */
 
 .contact{
     background:#1e293b;
@@ -198,138 +111,35 @@ CONTACTO
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:30px;
+    gap:20px;
 }
 
 .contact-box{
     background:#0f172a;
-
-    width:280px;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    transition:0.3s;
-}
-
-.contact-box:hover{
-    transform:translateY(-8px);
-
-    box-shadow:0 0 25px rgba(96,165,250,0.5);
-}
-
-.contact-box i{
-    font-size:40px;
-    margin-bottom:15px;
-    color:#60a5fa;
-}
-
-.contact-box a{
-    color:white;
-    text-decoration:none;
-}
-
-/* =========================
-MODAL
-========================= */
-
-.modal{
-    display:none;
-
-    position:fixed;
-
-    z-index:9999;
-
-    left:0;
-    top:0;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,0.8);
-}
-
-.modal-content{
-    background:white;
-    color:#111827;
-
-    width:90%;
-    max-width:900px;
-
-    margin:4% auto;
-
-    border-radius:20px;
-
-    overflow:hidden;
-}
-
-.modal-header{
-    background:#1e293b;
-    color:white;
-
     padding:20px;
-}
-
-.modal-body{
-    padding:25px;
-}
-
-.modal-images{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-    margin-top:20px;
-}
-
-.modal-images img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
     border-radius:15px;
+    width:250px;
+    text-align:center;
 }
 
-.close{
-    float:right;
-    font-size:35px;
-    cursor:pointer;
-}
-
-/* =========================
-WHATSAPP
-========================= */
+/* ========================= WHATSAPP ========================= */
 
 .whatsapp-float{
     position:fixed;
-
     left:20px;
     bottom:20px;
-
-    width:70px;
-    height:70px;
-
+    width:65px;
+    height:65px;
     background:#25d366;
-
     border-radius:50%;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
+    font-size:35px;
     color:white;
-
-    font-size:38px;
-
-    text-decoration:none;
-
-    z-index:9999;
 }
 
-/* =========================
-CHATBOT
-========================= */
+/* ========================= CHATBOT ========================= */
 
 .chat-floating{
     position:fixed;
@@ -344,60 +154,43 @@ CHATBOT
 }
 
 .chat-box{
-    width:330px;
+    width:320px;
     background:white;
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:10px;
+    border-radius:15px;
     display:none;
-    box-shadow:0 0 25px rgba(0,0,0,0.3);
+    margin-top:10px;
+    overflow:hidden;
 }
 
 .chat-header{
     background:#2563eb;
     color:white;
-    padding:15px;
-
+    padding:12px;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-}
-
-#toggleChat{
-    background:none;
-    border:none;
-    color:white;
-    font-size:24px;
-    cursor:pointer;
 }
 
 .messages{
-    height:260px;
+    height:250px;
     overflow-y:auto;
-    padding:15px;
-
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-
+    padding:10px;
     color:black;
 }
 
 .message{
-    padding:10px;
+    margin:5px 0;
+    padding:8px;
     border-radius:10px;
-    max-width:80%;
 }
 
 .user{
     background:#2563eb;
     color:white;
-    align-self:flex-end;
+    text-align:right;
 }
 
 .bot{
     background:#dbeafe;
-    align-self:flex-start;
 }
 
 .chat-input{
@@ -406,53 +199,16 @@ CHATBOT
 
 .chat-input input{
     flex:1;
+    padding:10px;
     border:none;
-    padding:15px;
-    outline:none;
 }
 
 .chat-input button{
-    border:none;
     background:#2563eb;
     color:white;
-    padding:15px;
+    border:none;
+    padding:10px;
     cursor:pointer;
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-    background:#0f172a;
-    text-align:center;
-    padding:25px;
-    color:#94a3b8;
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-
-@media(max-width:768px){
-
-    header{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    nav{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .modal-images{
-        grid-template-columns:1fr;
-    }
-
-    .chat-box{
-        width:300px;
-    }
 }
 
 </style>
@@ -464,115 +220,33 @@ RESPONSIVE
 <header>
 
 <div class="logo-area">
-
-<img src="red tech soluciones.png"
-class="logo">
-
-<h1>RED TECH</h1>
-
+    <img class="logo" src="red tech soluciones.png">
+    <h1>RED TECH</h1>
 </div>
 
 <nav>
-
-<a href="#inicio">Inicio</a>
-<a href="#servicios">Servicios</a>
-<a href="#contacto">Contacto</a>
-
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
 </nav>
 
 </header>
 
 <section class="hero" id="inicio">
 
-<div class="hero-content">
-
 <h2>RED TECH SOLUCIONES</h2>
-
-<p>
-
-Especialistas en mantenimiento tecnológico,
-reparación de computadores,
-instalación de software,
-venta de repuestos y soporte técnico.
-
-</p>
-
-</div>
 
 </section>
 
 <section id="servicios">
 
-<h2 class="section-title">
-
-Nuestros Servicios
-
-</h2>
+<h2>Servicios</h2>
 
 <div class="cards">
 
-<div class="card"
-onclick="openModal(
-'Mantenimiento',
-'Mantenimiento preventivo y correctivo.',
-'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200',
-'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200'
-)">
-
-<img
-src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Mantenimiento</h3>
-
-<p>Reparación y optimización.</p>
-
-</div>
-
-</div>
-
-<div class="card"
-onclick="openModal(
-'Repuestos',
-'Venta de componentes tecnológicos.',
-'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200',
-'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200'
-)">
-
-<img
-src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Repuestos</h3>
-
-<p>RAM, SSD y más.</p>
-
-</div>
-
-</div>
-
-<div class="card"
-onclick="openModal(
-'Software',
-'Instalación de Windows y programas.',
-'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200',
-'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200'
-)">
-
-<img
-src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Software</h3>
-
-<p>Windows y antivirus.</p>
-
-</div>
-
-</div>
+<div class="card">Mantenimiento</div>
+<div class="card">Software</div>
+<div class="card">Repuestos</div>
 
 </div>
 
@@ -580,384 +254,118 @@ src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200">
 
 <section class="contact" id="contacto">
 
-<h2 class="section-title">
-
-Contacto
-
-</h2>
+<h2>Contacto</h2>
 
 <div class="contact-container">
 
-<div class="contact-box">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-<h3>WhatsApp</h3>
-
-<a href="https://wa.me/573504555680"
-target="_blank">
-
-+57 350 455 5680
-
-</a>
-
-</div>
-
-<div class="contact-box">
-
-<i class="fa-solid fa-envelope"></i>
-
-<h3>Correo</h3>
-
-<a href="mailto:redtech0989@outlook.com">
-
-redtech0989@outlook.com
-
-</a>
-
-</div>
-
-<div class="contact-box">
-
-<i class="fa-brands fa-instagram"></i>
-
-<h3>Instagram</h3>
-
-<a href="https://www.instagram.com/redtech0889"
-target="_blank">
-
-@redtech0889
-
-</a>
-
-</div>
+<div class="contact-box">WhatsApp</div>
+<div class="contact-box">Correo</div>
+<div class="contact-box">Instagram</div>
 
 </div>
 
 </section>
 
-<!-- MODAL -->
-
-<div class="modal" id="modal">
-
-<div class="modal-content">
-
-<div class="modal-header">
-
-<span class="close"
-onclick="closeModal()">
-
-&times;
-
-</span>
-
-<h2 id="modalTitle"></h2>
-
-</div>
-
-<div class="modal-body">
-
-<p id="modalText"></p>
-
-<div class="modal-images">
-
-<img id="modalImg1">
-
-<img id="modalImg2">
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 <!-- WHATSAPP -->
-
-<a href="https://wa.me/573504555680"
-target="_blank"
-class="whatsapp-float">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
+<a class="whatsapp-float" href="https://wa.me/573504555680">💬</a>
 
 <!-- CHATBOT -->
-
 <div class="chat-floating">
 
-<img
-src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+<img id="chatIcon"
 class="chat-bot"
-id="chatIcon">
+src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
 
 <div class="chat-box" id="chatBox">
 
 <div class="chat-header">
-
 Red Tech Bot
-
-<button id="toggleChat">
-
-×
-
-</button>
-
+<button id="toggleChat">×</button>
 </div>
 
 <div class="messages" id="messages">
 
 <div class="message bot">
-
-👋 Hola, soy el asistente de Red Tech.
-
-Pregúntame sobre:
-
-✅ mantenimiento  
-✅ software  
-✅ repuestos  
-✅ soporte técnico
-
+Hola 👋 pregúntame sobre servicios
 </div>
 
 </div>
 
 <div class="chat-input">
 
-<input
-type="text"
-id="userInput"
-placeholder="Escribe tu pregunta...">
+<input id="userInput" placeholder="Escribe...">
 
-<button id="sendBtn">
-
-<i class="fa-solid fa-paper-plane"></i>
-
-</button>
+<button id="sendBtn">Enviar</button>
 
 </div>
 
 </div>
 
 </div>
-
-<footer>
-
-© 2026 Red Tech Soluciones
-
-</footer>
 
 <script>
 
-/* =========================
-MODAL
-========================= */
+/* CHATBOT */
 
-const modal =
-document.getElementById("modal");
-
-const modalTitle =
-document.getElementById("modalTitle");
-
-const modalText =
-document.getElementById("modalText");
-
-const modalImg1 =
-document.getElementById("modalImg1");
-
-const modalImg2 =
-document.getElementById("modalImg2");
-
-function openModal(title,text,img1,img2){
-
-modal.style.display = "block";
-
-modalTitle.innerText = title;
-
-modalText.innerText = text;
-
-modalImg1.src = img1;
-
-modalImg2.src = img2;
-}
-
-function closeModal(){
-
-modal.style.display = "none";
-}
-
-/* =========================
-CHATBOT
-========================= */
-
-const chatIcon =
-document.getElementById("chatIcon");
-
-const chatBox =
-document.getElementById("chatBox");
-
-const toggleChat =
-document.getElementById("toggleChat");
-
-const sendBtn =
-document.getElementById("sendBtn");
-
-const userInput =
-document.getElementById("userInput");
-
-const messages =
-document.getElementById("messages");
+const chatIcon = document.getElementById("chatIcon");
+const chatBox = document.getElementById("chatBox");
+const toggleChat = document.getElementById("toggleChat");
+const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userInput");
+const messages = document.getElementById("messages");
 
 chatIcon.onclick = () => {
-
-chatBox.style.display = "block";
-}
+    chatBox.style.display = "block";
+};
 
 toggleChat.onclick = () => {
-
-chatBox.style.display = "none";
-}
+    chatBox.style.display = "none";
+};
 
 sendBtn.onclick = sendMessage;
 
-userInput.addEventListener("keypress",function(e){
-
-if(e.key === "Enter"){
-
-sendMessage();
-}
-});
-
 function sendMessage(){
 
-const text =
-userInput.value.trim().toLowerCase();
+    const text = userInput.value.toLowerCase().trim();
+    if(!text) return;
 
-if(text === "") return;
+    addMessage(text,"user");
+    userInput.value = "";
 
-addMessage(text,"user");
-
-userInput.value = "";
-
-setTimeout(()=>{
-
-botResponse(text);
-
-},500);
+    setTimeout(()=>bot(text),500);
 }
 
 function addMessage(text,type){
 
-const msg =
-document.createElement("div");
+    const div = document.createElement("div");
+    div.classList.add("message",type);
+    div.innerHTML = text;
 
-msg.classList.add("message");
-
-msg.classList.add(type);
-
-msg.innerHTML = text;
-
-messages.appendChild(msg);
-
-messages.scrollTop =
-messages.scrollHeight;
+    messages.appendChild(div);
 }
 
-function botResponse(text){
+function bot(text){
 
-let response = "";
+    let r = "";
 
-if(
+    if(text.includes("mantenimiento")){
+        r = "🔧 Hacemos mantenimiento de PCs y laptops";
+    }
+    else if(text.includes("software")){
+        r = "💻 Instalamos Windows y programas";
+    }
+    else if(text.includes("repuesto")){
+        r = "🖥️ Vendemos RAM y SSD";
+    }
+    else{
+        r = `📲 Escríbenos por WhatsApp:
+        <a href="https://wa.me/573504555680" target="_blank">Abrir</a>`;
+    }
 
-text.includes("mantenimiento") ||
-text.includes("reparacion") ||
-text.includes("pc")
-
-){
-
-response = `
-
-🔧 Realizamos mantenimiento preventivo y correctivo para computadores.
-
-`;
-}
-
-else if(
-
-text.includes("software") ||
-text.includes("windows") ||
-text.includes("office")
-
-){
-
-response = `
-
-💻 Instalamos Windows,
-Office,
-drivers y antivirus.
-
-`;
-}
-
-else if(
-
-text.includes("repuestos") ||
-text.includes("ram") ||
-text.includes("ssd")
-
-){
-
-response = `
-
-🖥️ Vendemos RAM,
-SSD,
-teclados y componentes.
-
-`;
-}
-
-else if(
-
-text.includes("contacto") ||
-text.includes("whatsapp")
-
-){
-
-response = `
-
-📲 WhatsApp:
-
-<strong>350 455 5680</strong>
-
-`;
-}
-
-else{
-
-response = `
-
-🤖 No tengo información sobre eso.
-
-📲 Escríbenos por WhatsApp:
-
-<a
-href="https://wa.me/573504555680"
-target="_blank"
-style="color:#2563eb;font-weight:bold;">
-
-Abrir WhatsApp
-
-</a>
-
-`;
-}
-
-addMessage(response,"bot");
+    addMessage(r,"bot");
 }
 
 </script>
 
 </body>
 </html>
-```
