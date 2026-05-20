@@ -13,13 +13,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <style>
 
-/* ========================= GENERAL ========================= */
+/* =========================
+GENERAL
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+    font-family:Arial, sans-serif;
 }
 
 body{
@@ -27,19 +30,28 @@ body{
     color:white;
 }
 
-/* ========================= HEADER ========================= */
+/* =========================
+HEADER
+========================= */
 
 header{
     width:100%;
     background:linear-gradient(90deg,#0f172a,#1e293b);
+
     padding:15px 30px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     position:fixed;
     top:0;
     z-index:1000;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
+
+/* LOGO */
 
 .logo-area{
     display:flex;
@@ -52,7 +64,16 @@ header{
     height:65px;
     border-radius:50%;
     background:white;
+    padding:5px;
+    object-fit:cover;
 }
+
+.logo-area h1{
+    font-size:30px;
+    color:white;
+}
+
+/* NAV */
 
 nav{
     display:flex;
@@ -63,29 +84,86 @@ nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    transition:0.3s;
+    position:relative;
 }
 
-/* ========================= HERO ========================= */
+nav a:hover{
+    color:#60a5fa;
+}
+
+nav a::after{
+    content:"";
+    width:0%;
+    height:2px;
+    background:#60a5fa;
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero{
     height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+
     padding:20px;
-    background:linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.85)),
+
+    background:
+    linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.85)),
     url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200');
+
     background-size:cover;
+    background-position:center;
 }
 
-/* ========================= SECCIONES ========================= */
+.hero-content{
+    max-width:850px;
+    margin-top:80px;
+}
+
+.hero-content h2{
+    font-size:70px;
+    color:#60a5fa;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+    line-height:1.8;
+    color:#dbeafe;
+}
+
+/* =========================
+SECCIONES
+========================= */
 
 section{
     padding:90px 20px;
 }
 
-/* ========================= CARDS ========================= */
+.section-title{
+    text-align:center;
+    font-size:45px;
+    color:#1e3a8a;
+    margin-bottom:50px;
+}
+
+/* =========================
+SERVICIOS
+========================= */
 
 .cards{
     display:grid;
@@ -95,13 +173,121 @@ section{
 
 .card{
     background:white;
-    color:black;
     border-radius:20px;
     overflow:hidden;
+
+    cursor:pointer;
+    transition:0.4s;
+
+    color:#111827;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(96,165,250,0.6);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+/* =========================
+MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.8);
+}
+
+.modal-content{
+    background:white;
+    color:#111827;
+
+    width:90%;
+    max-width:900px;
+
+    margin:4% auto;
+
+    border-radius:20px;
+    overflow:hidden;
+
+    animation:show 0.4s;
+}
+
+@keyframes show{
+
+    from{
+        transform:scale(0.7);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.modal-header{
+    background:#1e293b;
+    color:white;
+
+    padding:20px;
+}
+
+.modal-body{
+    padding:25px;
+}
+
+.modal-images{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.modal-images img{
+    width:100%;
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+}
+
+.close{
+    float:right;
+    font-size:35px;
     cursor:pointer;
 }
 
-/* ========================= CONTACTO ========================= */
+/* =========================
+CONTACTO
+========================= */
 
 .contact{
     background:#1e293b;
@@ -110,98 +296,160 @@ section{
 .contact-container{
     display:flex;
     flex-wrap:wrap;
+
     justify-content:center;
-    gap:20px;
+    gap:30px;
 }
 
 .contact-box{
     background:#0f172a;
-    padding:20px;
-    border-radius:15px;
-    width:250px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    width:280px;
+
     text-align:center;
+
+    transition:0.3s;
 }
 
-/* ========================= WHATSAPP ========================= */
+.contact-box:hover{
+    transform:translateY(-8px);
 
-.whatsapp-float{
-    position:fixed;
-    left:20px;
-    bottom:20px;
-    width:65px;
-    height:65px;
-    background:#25d366;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:35px;
+    box-shadow:0 0 25px rgba(96,165,250,0.5);
+}
+
+.contact-box i{
+    font-size:40px;
+    margin-bottom:15px;
+
+    color:#60a5fa;
+}
+
+.contact-box a{
     color:white;
-    z-index:9999;
+    text-decoration:none;
 }
 
-/* ========================= CHATBOT PRO ========================= */
+/* =========================
+CHAT FLOTANTE
+========================= */
 
 .chat-floating{
     position:fixed;
+
     right:20px;
     bottom:20px;
+
     z-index:9999;
 }
 
+/* MUÑEQUITO */
+
 .chat-bot{
-    width:80px;
-    cursor:pointer;
+    width:85px;
+
+    animation:float 2s infinite ease-in-out;
 }
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* CHAT */
 
 .chat-box{
     width:330px;
+
     background:white;
-    border-radius:15px;
-    display:none;
-    margin-top:10px;
+
+    border-radius:20px;
+
     overflow:hidden;
+
+    margin-top:10px;
+
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
 }
+
+/* HEADER CHAT */
 
 .chat-header{
     background:#2563eb;
-    color:white;
-    padding:12px;
+
+    padding:15px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    font-weight:bold;
 }
 
-.chat-header button{
+/* BOTÓN MINIMIZAR */
+
+#toggleChat{
     background:none;
     border:none;
+
     color:white;
-    font-size:20px;
+
+    font-size:24px;
+
     cursor:pointer;
 }
 
+/* MENSAJES */
+
 .messages{
     height:260px;
+
     overflow-y:auto;
-    padding:10px;
+
+    padding:15px;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
     color:black;
 }
 
 .message{
-    margin:5px 0;
-    padding:8px;
+    padding:10px;
+
     border-radius:10px;
+
+    max-width:80%;
 }
 
 .user{
     background:#2563eb;
     color:white;
-    text-align:right;
+
+    align-self:flex-end;
 }
 
 .bot{
     background:#dbeafe;
+
+    align-self:flex-start;
 }
+
+/* INPUT */
 
 .chat-input{
     display:flex;
@@ -209,29 +457,38 @@ section{
 
 .chat-input input{
     flex:1;
-    padding:10px;
+
     border:none;
+
+    padding:15px;
+
     outline:none;
 }
 
 .chat-input button{
-    background:#2563eb;
-    color:white;
     border:none;
-    padding:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px;
+
     cursor:pointer;
 }
 
-/* BOTONES CHAT */
-.chat-box button{
-    margin:5px 5px 0 0;
-    padding:6px 10px;
-    border:none;
-    border-radius:10px;
-    background:#2563eb;
-    color:white;
-    cursor:pointer;
-    font-size:12px;
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    background:#0f172a;
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#94a3b8;
 }
 
 </style>
@@ -240,176 +497,557 @@ section{
 
 <body>
 
+<!-- =========================
+HEADER
+========================= -->
+
 <header>
 
-<div class="logo-area">
-    <img class="logo" src="red tech soluciones.png">
-    <h1>RED TECH</h1>
-</div>
+    <div class="logo-area">
 
-<nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-</nav>
+        <img
+        src="red tech soluciones.png"
+        class="logo">
+
+        <h1>RED TECH</h1>
+
+    </div>
+
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#servicios">
+            Servicios
+        </a>
+
+        <a href="#contacto">
+            Contacto
+        </a>
+
+    </nav>
 
 </header>
 
+<!-- =========================
+HERO
+========================= -->
+
 <section class="hero" id="inicio">
-<h2>RED TECH SOLUCIONES</h2>
+
+    <div class="hero-content">
+
+        <h2>
+            RED TECH SOLUCIONES
+        </h2>
+
+        <p>
+
+            Especialistas en mantenimiento
+            tecnológico, reparación de
+            computadores, instalación
+            de software, venta de
+            repuestos y soporte técnico.
+
+        </p>
+
+    </div>
+
 </section>
+
+<!-- =========================
+SERVICIOS
+========================= -->
 
 <section id="servicios">
 
-<h2>Servicios</h2>
+    <h2 class="section-title">
 
-<div class="cards">
-<div class="card">Mantenimiento</div>
-<div class="card">Software</div>
-<div class="card">Repuestos</div>
-</div>
+        Nuestros Servicios
+
+    </h2>
+
+    <div class="cards">
+
+        <!-- CARD 1 -->
+
+        <div class="card"
+
+        onclick="openModal(
+        'Mantenimiento de Equipos',
+
+        'Realizamos mantenimiento preventivo y correctivo para computadores y laptops.',
+
+        'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200',
+
+        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200'
+        )">
+
+            <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200">
+
+            <div class="card-content">
+
+                <h3>
+                    Mantenimiento
+                </h3>
+
+                <p>
+                    Reparación y optimización.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="card"
+
+        onclick="openModal(
+        'Venta de Repuestos',
+
+        'Vendemos memorias RAM, SSD, teclados y componentes.',
+
+        'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200',
+
+        'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200'
+        )">
+
+            <img
+            src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200">
+
+            <div class="card-content">
+
+                <h3>
+                    Repuestos
+                </h3>
+
+                <p>
+                    Partes tecnológicas.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="card"
+
+        onclick="openModal(
+        'Instalación de Software',
+
+        'Instalamos Windows, programas y antivirus.',
+
+        'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200',
+
+        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200'
+        )">
+
+            <img
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200">
+
+            <div class="card-content">
+
+                <h3>
+                    Software
+                </h3>
+
+                <p>
+                    Sistemas y programas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
+
+<!-- =========================
+CONTACTO
+========================= -->
 
 <section class="contact" id="contacto">
 
-<h2>Contacto</h2>
+    <h2 class="section-title">
 
-<div class="contact-container">
+        Contacto
 
-<div class="contact-box">WhatsApp</div>
-<div class="contact-box">Correo</div>
-<div class="contact-box">Instagram</div>
+    </h2>
 
-</div>
+    <div class="contact-container">
+
+        <!-- TEL -->
+
+        <div class="contact-box">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <h3>Teléfono</h3>
+
+            <p>
+                +57 300 123 4567
+            </p>
+
+        </div>
+
+        <!-- INSTAGRAM -->
+
+        <div class="contact-box">
+
+            <i class="fa-brands fa-instagram"></i>
+
+            <h3>Instagram</h3>
+
+            <a href="https://instagram.com/"
+            target="_blank">
+
+                @redtech_oficial
+
+            </a>
+
+        </div>
+
+        <!-- FACEBOOK -->
+
+        <div class="contact-box">
+
+            <i class="fa-brands fa-facebook"></i>
+
+            <h3>Facebook</h3>
+
+            <a href="https://facebook.com/"
+            target="_blank">
+
+                Red Tech Soluciones
+
+            </a>
+
+        </div>
+
+        <!-- TIKTOK -->
+
+        <div class="contact-box">
+
+            <i class="fa-brands fa-tiktok"></i>
+
+            <h3>TikTok</h3>
+
+            <a href="https://tiktok.com/"
+            target="_blank">
+
+                @redtech
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp-float" href="https://wa.me/573504555680">💬</a>
+<!-- =========================
+MODAL
+========================= -->
 
-<!-- CHATBOT PRO -->
+<div class="modal"
+id="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <span class="close"
+            onclick="closeModal()">
+
+                &times;
+
+            </span>
+
+            <h2 id="modalTitle"></h2>
+
+        </div>
+
+        <div class="modal-body">
+
+            <p id="modalText"></p>
+
+            <div class="modal-images">
+
+                <img id="modalImg1">
+
+                <img id="modalImg2">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+CHAT
+========================= -->
+
 <div class="chat-floating">
 
-<img id="chatIcon"
-class="chat-bot"
-src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+    <!-- MUÑEQUITO -->
 
-<div class="chat-box" id="chatBox">
+    <img
+    src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+    class="chat-bot">
 
-<div class="chat-header">
-Red Tech Bot
-<button id="toggleChat">×</button>
+    <!-- CHAT -->
+
+    <div class="chat-box">
+
+        <!-- HEADER -->
+
+        <div class="chat-header">
+
+            <span>
+                Chat Red Tech 👋
+            </span>
+
+            <button id="toggleChat">
+
+                —
+
+            </button>
+
+        </div>
+
+        <!-- MENSAJES -->
+
+        <div class="messages"
+        id="messages">
+
+            <div class="message bot">
+
+                Hola 👋 Bienvenido a Red Tech
+
+            </div>
+
+        </div>
+
+        <!-- INPUT -->
+
+        <div class="chat-input">
+
+            <input
+            type="text"
+            id="messageInput"
+            placeholder="Escribe un mensaje...">
+
+            <button
+            onclick="sendMessage()">
+
+                Enviar
+
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div class="messages" id="messages">
+<!-- =========================
+FOOTER
+========================= -->
 
-<div class="message bot">
-👋 Hola, soy el bot de Red Tech.<br><br>
-🔧 Mantenimiento<br>
-💻 Software<br>
-🖥️ Repuestos<br>
-📲 Escribe o usa los botones abajo
-</div>
+<footer>
 
-<div class="message bot">
-<button onclick="quick('servicios')">Servicios</button>
-<button onclick="quick('precios')">Precios</button>
-<button onclick="quick('whatsapp')">WhatsApp</button>
-</div>
+    © 2026 Red Tech Soluciones
 
-</div>
+</footer>
 
-<div class="chat-input">
-
-<input id="userInput" placeholder="Escribe...">
-
-<button id="sendBtn">Enviar</button>
-
-</div>
-
-</div>
-
-</div>
+<!-- =========================
+JAVASCRIPT
+========================= -->
 
 <script>
 
-/* CHATBOT PRO */
+/* MODAL */
 
-const chatIcon = document.getElementById("chatIcon");
-const chatBox = document.getElementById("chatBox");
-const toggleChat = document.getElementById("toggleChat");
-const sendBtn = document.getElementById("sendBtn");
-const userInput = document.getElementById("userInput");
-const messages = document.getElementById("messages");
+const modal =
+document.getElementById("modal");
 
-chatIcon.onclick = () => chatBox.style.display = "block";
-toggleChat.onclick = () => chatBox.style.display = "none";
+const modalTitle =
+document.getElementById("modalTitle");
 
-sendBtn.onclick = sendMessage;
+const modalText =
+document.getElementById("modalText");
 
-userInput.addEventListener("keypress",(e)=>{
-    if(e.key==="Enter") sendMessage();
-});
+const modalImg1 =
+document.getElementById("modalImg1");
+
+const modalImg2 =
+document.getElementById("modalImg2");
+
+function openModal(title,text,img1,img2){
+
+    modal.style.display = "block";
+
+    modalTitle.innerText = title;
+
+    modalText.innerText = text;
+
+    modalImg1.src = img1;
+
+    modalImg2.src = img2;
+}
+
+function closeModal(){
+
+    modal.style.display = "none";
+}
+
+/* CERRAR AFUERA */
+
+window.onclick = function(event){
+
+    if(event.target == modal){
+
+        modal.style.display = "none";
+    }
+}
+
+/* CHAT */
+
+const messages =
+document.getElementById("messages");
+
+const input =
+document.getElementById("messageInput");
 
 function sendMessage(){
 
-    const text = userInput.value.toLowerCase().trim();
-    if(!text) return;
+    const text =
+    input.value.trim();
 
-    add(text,"user");
-    userInput.value="";
+    if(text === "") return;
 
-    setTimeout(()=>bot(text),500);
+    const userMessage =
+    document.createElement("div");
+
+    userMessage.classList.add(
+    "message","user");
+
+    userMessage.innerText = text;
+
+    messages.appendChild(userMessage);
+
+    input.value = "";
+
+    messages.scrollTop =
+    messages.scrollHeight;
+
+    setTimeout(()=>{
+
+        const botMessage =
+        document.createElement("div");
+
+        botMessage.classList.add(
+        "message","bot");
+
+        botMessage.innerText =
+        getBotResponse(text);
+
+        messages.appendChild(botMessage);
+
+        messages.scrollTop =
+        messages.scrollHeight;
+
+    },1000);
 }
 
-function add(text,type){
+/* ENTER */
 
-    const div = document.createElement("div");
-    div.classList.add("message",type);
-    div.innerHTML = text;
+input.addEventListener("keypress",
+function(e){
 
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
+    if(e.key === "Enter"){
+
+        sendMessage();
+    }
+});
+
+/* RESPUESTAS */
+
+function getBotResponse(message){
+
+    message = message.toLowerCase();
+
+    if(message.includes("hola")){
+
+        return "Hola 👋 ¿Cómo podemos ayudarte?";
+    }
+
+    if(message.includes("precio")){
+
+        return "Los precios dependen del servicio.";
+    }
+
+    if(message.includes("mantenimiento")){
+
+        return "Realizamos mantenimiento preventivo y correctivo.";
+    }
+
+    if(message.includes("gracias")){
+
+        return "😊 Gracias por confiar en Red Tech.";
+    }
+
+    return "Tu mensaje fue recibido correctamente.";
 }
 
-function bot(text){
+/* MINIMIZAR CHAT */
 
-    let r="";
+const toggleBtn =
+document.getElementById("toggleChat");
 
-    if(text.includes("mantenimiento")||text.includes("pc")){
-        r="🔧 Mantenimiento de computadores y laptops.";
+const chatMessages =
+document.querySelector(".messages");
+
+const chatInput =
+document.querySelector(".chat-input");
+
+let abierto = true;
+
+toggleBtn.onclick = function(){
+
+    if(abierto){
+
+        chatMessages.style.display = "none";
+
+        chatInput.style.display = "none";
+
+        toggleBtn.innerHTML = "+";
+
+        abierto = false;
     }
-    else if(text.includes("software")){
-        r="💻 Instalamos Windows y programas.";
-    }
-    else if(text.includes("repuesto")){
-        r="🖥️ RAM, SSD y componentes.";
-    }
+
     else{
-        r=`📲 Escríbenos por WhatsApp:
-        <a href="https://wa.me/573504555680" target="_blank">Abrir</a>`;
-    }
 
-    add(r,"bot");
-}
+        chatMessages.style.display = "flex";
 
-function quick(option){
+        chatInput.style.display = "flex";
 
-    if(option==="servicios"){
-        add("🔧 Servicios: mantenimiento, software y repuestos","bot");
-    }
+        toggleBtn.innerHTML = "—";
 
-    if(option==="precios"){
-        add("💰 Escríbenos por WhatsApp para cotización","bot");
-    }
-
-    if(option==="whatsapp"){
-        window.open("https://wa.me/573504555680","_blank");
+        abierto = true;
     }
 }
 
 </script>
 
 </body>
+
 </html>
+
+
