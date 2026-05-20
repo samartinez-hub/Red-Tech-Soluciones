@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,7 +23,7 @@ GENERAL
     padding:0;
     box-sizing:border-box;
     scroll-behavior:smooth;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -46,12 +47,11 @@ header{
 
     position:fixed;
     top:0;
+
     z-index:1000;
 
     box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
-
-/* LOGO */
 
 .logo-area{
     display:flex;
@@ -65,15 +65,11 @@ header{
     border-radius:50%;
     background:white;
     padding:5px;
-    object-fit:cover;
 }
 
 .logo-area h1{
     font-size:30px;
-    color:white;
 }
-
-/* NAV */
 
 nav{
     display:flex;
@@ -85,26 +81,10 @@ nav a{
     text-decoration:none;
     font-weight:bold;
     transition:0.3s;
-    position:relative;
 }
 
 nav a:hover{
     color:#60a5fa;
-}
-
-nav a::after{
-    content:"";
-    width:0%;
-    height:2px;
-    background:#60a5fa;
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    transition:0.3s;
-}
-
-nav a:hover::after{
-    width:100%;
 }
 
 /* =========================
@@ -162,7 +142,7 @@ section{
 }
 
 /* =========================
-SERVICIOS
+CARDS
 ========================= */
 
 .cards{
@@ -176,10 +156,11 @@ SERVICIOS
     border-radius:20px;
     overflow:hidden;
 
-    cursor:pointer;
-    transition:0.4s;
-
     color:#111827;
+
+    cursor:pointer;
+
+    transition:0.4s;
 
     box-shadow:0 0 20px rgba(0,0,0,0.1);
 }
@@ -206,12 +187,60 @@ SERVICIOS
 }
 
 /* =========================
+CONTACTO
+========================= */
+
+.contact{
+    background:#1e293b;
+}
+
+.contact-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+.contact-box{
+    background:#0f172a;
+
+    width:280px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:0.3s;
+}
+
+.contact-box:hover{
+    transform:translateY(-8px);
+
+    box-shadow:0 0 25px rgba(96,165,250,0.5);
+}
+
+.contact-box i{
+    font-size:40px;
+    margin-bottom:15px;
+    color:#60a5fa;
+}
+
+.contact-box a{
+    color:white;
+    text-decoration:none;
+}
+
+/* =========================
 MODAL
 ========================= */
 
 .modal{
     display:none;
+
     position:fixed;
+
     z-index:9999;
 
     left:0;
@@ -233,22 +262,8 @@ MODAL
     margin:4% auto;
 
     border-radius:20px;
+
     overflow:hidden;
-
-    animation:show 0.4s;
-}
-
-@keyframes show{
-
-    from{
-        transform:scale(0.7);
-        opacity:0;
-    }
-
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
 }
 
 .modal-header{
@@ -266,16 +281,13 @@ MODAL
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:15px;
-
     margin-top:20px;
 }
 
 .modal-images img{
     width:100%;
     height:250px;
-
     object-fit:cover;
-
     border-radius:15px;
 }
 
@@ -286,59 +298,10 @@ MODAL
 }
 
 /* =========================
-CONTACTO
-========================= */
-
-.contact{
-    background:#1e293b;
-}
-
-.contact-container{
-    display:flex;
-    flex-wrap:wrap;
-
-    justify-content:center;
-    gap:30px;
-}
-
-.contact-box{
-    background:#0f172a;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    width:280px;
-
-    text-align:center;
-
-    transition:0.3s;
-}
-
-.contact-box:hover{
-    transform:translateY(-8px);
-
-    box-shadow:0 0 25px rgba(96,165,250,0.5);
-}
-
-.contact-box i{
-    font-size:40px;
-    margin-bottom:15px;
-
-    color:#60a5fa;
-}
-
-.contact-box a{
-    color:white;
-    text-decoration:none;
-}
-
-/* =========================
-WHATSAPP FLOTANTE
+WHATSAPP
 ========================= */
 
 .whatsapp-float{
-
     position:fixed;
 
     left:20px;
@@ -362,93 +325,55 @@ WHATSAPP FLOTANTE
     text-decoration:none;
 
     z-index:9999;
-
-    box-shadow:0 0 25px rgba(0,0,0,0.3);
-
-    transition:0.3s;
-}
-
-.whatsapp-float:hover{
-
-    transform:scale(1.1);
 }
 
 /* =========================
-CHAT FLOTANTE
+CHATBOT
 ========================= */
 
 .chat-floating{
     position:fixed;
-
     right:20px;
     bottom:20px;
-
     z-index:9999;
 }
 
 .chat-bot{
-    width:85px;
-
-    animation:float 2s infinite ease-in-out;
-}
-
-@keyframes float{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
+    width:80px;
+    cursor:pointer;
 }
 
 .chat-box{
     width:330px;
-
     background:white;
-
     border-radius:20px;
-
     overflow:hidden;
-
     margin-top:10px;
-
+    display:none;
     box-shadow:0 0 25px rgba(0,0,0,0.3);
 }
 
 .chat-header{
     background:#2563eb;
-
+    color:white;
     padding:15px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    font-weight:bold;
 }
 
 #toggleChat{
     background:none;
     border:none;
-
     color:white;
-
     font-size:24px;
-
     cursor:pointer;
 }
 
 .messages{
     height:260px;
-
     overflow-y:auto;
-
     padding:15px;
 
     display:flex;
@@ -460,22 +385,18 @@ CHAT FLOTANTE
 
 .message{
     padding:10px;
-
     border-radius:10px;
-
     max-width:80%;
 }
 
 .user{
     background:#2563eb;
     color:white;
-
     align-self:flex-end;
 }
 
 .bot{
     background:#dbeafe;
-
     align-self:flex-start;
 }
 
@@ -485,93 +406,53 @@ CHAT FLOTANTE
 
 .chat-input input{
     flex:1;
-
     border:none;
-
     padding:15px;
-
     outline:none;
 }
 
 .chat-input button{
     border:none;
-
     background:#2563eb;
-
     color:white;
-
     padding:15px;
-
     cursor:pointer;
 }
-<!-- CHATBOT -->
 
-<div class="chat-floating">
-
-    <img
-    src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
-    class="chat-bot"
-    id="chatIcon">
-
-    <div class="chat-box" id="chatBox" style="display:none;">
-
-        <div class="chat-header">
-
-            Red Tech Bot
-
-            <button id="toggleChat">
-                ×
-            </button>
-
-        </div>
-
-        <div class="messages" id="messages">
-
-            <div class="message bot">
-
-                👋 Hola, soy el asistente de Red Tech.
-
-                Puedes preguntarme sobre:
-
-                ✅ mantenimiento  
-                ✅ software  
-                ✅ repuestos  
-                ✅ soporte técnico
-
-            </div>
-
-        </div>
-
-        <div class="chat-input">
-
-            <input
-            type="text"
-            id="userInput"
-            placeholder="Escribe tu pregunta...">
-
-            <button id="sendBtn">
-
-                <i class="fa-solid fa-paper-plane"></i>
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
 /* =========================
 FOOTER
 ========================= */
 
 footer{
     background:#0f172a;
-
     text-align:center;
-
     padding:25px;
-
     color:#94a3b8;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .modal-images{
+        grid-template-columns:1fr;
+    }
+
+    .chat-box{
+        width:300px;
+    }
 }
 
 </style>
@@ -582,301 +463,296 @@ footer{
 
 <header>
 
-    <div class="logo-area">
+<div class="logo-area">
 
-        <img
-        src="red tech soluciones.png"
-        class="logo"
-        alt="Logo Red Tech">
+<img src="red tech soluciones.png"
+class="logo">
 
-        <h1>RED TECH</h1>
+<h1>RED TECH</h1>
 
-    </div>
+</div>
 
-    <nav>
+<nav>
 
-        <a href="#inicio">Inicio</a>
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contacto</a>
 
-        <a href="#servicios">
-            Servicios
-        </a>
-
-        <a href="#contacto">
-            Contacto
-        </a>
-
-    </nav>
+</nav>
 
 </header>
 
 <section class="hero" id="inicio">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h2>
-            RED TECH SOLUCIONES
-        </h2>
+<h2>RED TECH SOLUCIONES</h2>
 
-        <p>
+<p>
 
-            Especialistas en mantenimiento
-            tecnológico, reparación de
-            computadores, instalación
-            de software, venta de
-            repuestos y soporte técnico.
+Especialistas en mantenimiento tecnológico,
+reparación de computadores,
+instalación de software,
+venta de repuestos y soporte técnico.
 
-        </p>
+</p>
 
-    </div>
+</div>
 
 </section>
 
 <section id="servicios">
 
-    <h2 class="section-title">
+<h2 class="section-title">
 
-        Nuestros Servicios
+Nuestros Servicios
 
-    </h2>
+</h2>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card"
+<div class="card"
+onclick="openModal(
+'Mantenimiento',
+'Mantenimiento preventivo y correctivo.',
+'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200',
+'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200'
+)">
 
-        onclick="openModal(
-        'Mantenimiento de Equipos',
+<img
+src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200">
 
-        'Realizamos mantenimiento preventivo y correctivo para computadores y laptops.',
+<div class="card-content">
 
-        'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200',
+<h3>Mantenimiento</h3>
 
-        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200'
-        )">
+<p>Reparación y optimización.</p>
 
-            <img
-            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200"
-            alt="Mantenimiento">
+</div>
 
-            <div class="card-content">
+</div>
 
-                <h3>
-                    Mantenimiento
-                </h3>
+<div class="card"
+onclick="openModal(
+'Repuestos',
+'Venta de componentes tecnológicos.',
+'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200',
+'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200'
+)">
 
-                <p>
-                    Reparación y optimización.
-                </p>
+<img
+src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200">
 
-            </div>
+<div class="card-content">
 
-        </div>
+<h3>Repuestos</h3>
 
-        <div class="card"
+<p>RAM, SSD y más.</p>
 
-        onclick="openModal(
-        'Venta de Repuestos',
+</div>
 
-        'Vendemos memorias RAM, SSD, teclados y componentes.',
+</div>
 
-        'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200',
+<div class="card"
+onclick="openModal(
+'Software',
+'Instalación de Windows y programas.',
+'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200',
+'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200'
+)">
 
-        'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200'
-        )">
+<img
+src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200">
 
-            <img
-            src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200"
-            alt="Repuestos">
+<div class="card-content">
 
-            <div class="card-content">
+<h3>Software</h3>
 
-                <h3>
-                    Repuestos
-                </h3>
+<p>Windows y antivirus.</p>
 
-                <p>
-                    Partes tecnológicas.
-                </p>
+</div>
 
-            </div>
+</div>
 
-        </div>
-
-        <div class="card"
-
-        onclick="openModal(
-        'Instalación de Software',
-
-        'Instalamos Windows, programas y antivirus.',
-
-        'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200',
-
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200'
-        )">
-
-            <img
-            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200"
-            alt="Software">
-
-            <div class="card-content">
-
-                <h3>
-                    Software
-                </h3>
-
-                <p>
-                    Sistemas y programas.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 <section class="contact" id="contacto">
 
-    <h2 class="section-title">
+<h2 class="section-title">
 
-        Contacto
+Contacto
 
-    </h2>
+</h2>
 
-    <div class="contact-container">
+<div class="contact-container">
 
-        <div class="contact-box">
+<div class="contact-box">
 
-            <i class="fa-brands fa-whatsapp"></i>
+<i class="fa-brands fa-whatsapp"></i>
 
-            <h3>WhatsApp</h3>
+<h3>WhatsApp</h3>
 
-            <a href="https://wa.me/573504555680"
-            target="_blank">
+<a href="https://wa.me/573504555680"
+target="_blank">
 
-                +57 350 455 5680
-
-            </a>
-
-        </div>
-
-        <div class="contact-box">
-
-            <i class="fa-solid fa-envelope"></i>
-
-            <h3>Correo</h3>
-
-            <a href="mailto:redtech0989@outlook.com">
-
-                redtech0989@outlook.com
-
-            </a>
-
-        </div>
-
-        <div class="contact-box">
-
-            <i class="fa-brands fa-instagram"></i>
-
-            <h3>Instagram</h3>
-
-            <a href="https://www.instagram.com/redtech0889?igsh=M3B3ZTIxMThmeThm"
-            target="_blank">
-
-                @redtech0889
-
-            </a>
-
-        </div>
-
-        <div class="contact-box">
-
-            <i class="fa-brands fa-facebook"></i>
-
-            <h3>Facebook</h3>
-
-            <a href="https://www.facebook.com/share/1B5GFG2Js2/"
-            target="_blank">
-
-                Red Tech Soluciones
-
-            </a>
-
-        </div>
-
-        <div class="contact-box">
-
-            <i class="fa-brands fa-tiktok"></i>
-
-            <h3>TikTok</h3>
-
-            <a href="https://www.tiktok.com/@martinez_sam?_r=1&_t=ZS-96WHSoev7CB"
-            target="_blank">
-
-                @martinez_sam
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<div class="modal"
-id="modal">
-
-    <div class="modal-content">
-
-        <div class="modal-header">
-
-            <span class="close"
-            onclick="closeModal()">
-
-                &times;
-
-            </span>
-
-            <h2 id="modalTitle"></h2>
-
-        </div>
-
-        <div class="modal-body">
-
-            <p id="modalText"></p>
-
-            <div class="modal-images">
-
-                <img id="modalImg1" alt="Servicio 1">
-
-                <img id="modalImg2" alt="Servicio 2">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<a
-href="https://wa.me/573504555680"
-target="_blank"
-class="whatsapp-float">
-
-    <i class="fa-brands fa-whatsapp"></i>
++57 350 455 5680
 
 </a>
 
+</div>
+
+<div class="contact-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>Correo</h3>
+
+<a href="mailto:redtech0989@outlook.com">
+
+redtech0989@outlook.com
+
+</a>
+
+</div>
+
+<div class="contact-box">
+
+<i class="fa-brands fa-instagram"></i>
+
+<h3>Instagram</h3>
+
+<a href="https://www.instagram.com/redtech0889"
+target="_blank">
+
+@redtech0889
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<span class="close"
+onclick="closeModal()">
+
+&times;
+
+</span>
+
+<h2 id="modalTitle"></h2>
+
+</div>
+
+<div class="modal-body">
+
+<p id="modalText"></p>
+
+<div class="modal-images">
+
+<img id="modalImg1">
+
+<img id="modalImg2">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/573504555680"
+target="_blank"
+class="whatsapp-float">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- CHATBOT -->
+
+<div class="chat-floating">
+
+<img
+src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+class="chat-bot"
+id="chatIcon">
+
+<div class="chat-box" id="chatBox">
+
+<div class="chat-header">
+
+Red Tech Bot
+
+<button id="toggleChat">
+
+×
+
+</button>
+
+</div>
+
+<div class="messages" id="messages">
+
+<div class="message bot">
+
+👋 Hola, soy el asistente de Red Tech.
+
+Pregúntame sobre:
+
+✅ mantenimiento  
+✅ software  
+✅ repuestos  
+✅ soporte técnico
+
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+type="text"
+id="userInput"
+placeholder="Escribe tu pregunta...">
+
+<button id="sendBtn">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
 <footer>
 
-    © 2026 Red Tech Soluciones | Todos los derechos reservados
+© 2026 Red Tech Soluciones
 
 </footer>
 
 <script>
 
-/* MODAL */
+/* =========================
+MODAL
+========================= */
 
 const modal =
 document.getElementById("modal");
@@ -895,31 +771,24 @@ document.getElementById("modalImg2");
 
 function openModal(title,text,img1,img2){
 
-    modal.style.display = "block";
+modal.style.display = "block";
 
-    modalTitle.innerText = title;
+modalTitle.innerText = title;
 
-    modalText.innerText = text;
+modalText.innerText = text;
 
-    modalImg1.src = img1;
+modalImg1.src = img1;
 
-    modalImg2.src = img2;
+modalImg2.src = img2;
 }
 
 function closeModal(){
 
-    modal.style.display = "none";
+modal.style.display = "none";
 }
 
-window.onclick = function(event){
-
-    if(event.target == modal){
-
-        modal.style.display = "none";
-    }
-}
 /* =========================
-CHATBOT RED TECH
+CHATBOT
 ========================= */
 
 const chatIcon =
@@ -940,212 +809,155 @@ document.getElementById("userInput");
 const messages =
 document.getElementById("messages");
 
-/* ABRIR CHAT */
-
 chatIcon.onclick = () => {
 
-    chatBox.style.display = "block";
+chatBox.style.display = "block";
 }
-
-/* CERRAR CHAT */
 
 toggleChat.onclick = () => {
 
-    chatBox.style.display = "none";
+chatBox.style.display = "none";
 }
-
-/* ENVIAR MENSAJE */
 
 sendBtn.onclick = sendMessage;
 
-userInput.addEventListener("keypress", function(e){
+userInput.addEventListener("keypress",function(e){
 
-    if(e.key === "Enter"){
+if(e.key === "Enter"){
 
-        sendMessage();
-    }
+sendMessage();
+}
 });
 
 function sendMessage(){
 
-    const text =
-    userInput.value.trim().toLowerCase();
+const text =
+userInput.value.trim().toLowerCase();
 
-    if(text === "") return;
+if(text === "") return;
 
-    addMessage(text,"user");
+addMessage(text,"user");
 
-    userInput.value = "";
+userInput.value = "";
 
-    setTimeout(()=>{
+setTimeout(()=>{
 
-        botResponse(text);
+botResponse(text);
 
-    },500);
+},500);
 }
-
-/* AGREGAR MENSAJES */
 
 function addMessage(text,type){
 
-    const msg =
-    document.createElement("div");
+const msg =
+document.createElement("div");
 
-    msg.classList.add("message");
+msg.classList.add("message");
 
-    msg.classList.add(type);
+msg.classList.add(type);
 
-    msg.innerHTML = text;
+msg.innerHTML = text;
 
-    messages.appendChild(msg);
+messages.appendChild(msg);
 
-    messages.scrollTop =
-    messages.scrollHeight;
+messages.scrollTop =
+messages.scrollHeight;
 }
-
-/* RESPUESTAS BOT */
 
 function botResponse(text){
 
-    let response = "";
+let response = "";
 
-    /* MANTENIMIENTO */
+if(
 
-    if(
+text.includes("mantenimiento") ||
+text.includes("reparacion") ||
+text.includes("pc")
 
-        text.includes("mantenimiento") ||
-        text.includes("reparacion") ||
-        text.includes("computador") ||
-        text.includes("laptop")
+){
 
-    ){
+response = `
 
-        response = `
+🔧 Realizamos mantenimiento preventivo y correctivo para computadores.
 
-        🔧 Realizamos mantenimiento preventivo y correctivo para computadores y laptops.
-
-        ✅ Limpieza interna  
-        ✅ Optimización  
-        ✅ Reparación  
-        ✅ Diagnóstico técnico
-
-        `;
-    }
-
-    /* SOFTWARE */
-
-    else if(
-
-        text.includes("software") ||
-        text.includes("windows") ||
-        text.includes("programas") ||
-        text.includes("antivirus")
-
-    ){
-
-        response = `
-
-        💻 Instalamos:
-
-        ✅ Windows  
-        ✅ Programas  
-        ✅ Drivers  
-        ✅ Antivirus  
-        ✅ Office
-
-        `;
-    }
-
-    /* REPUESTOS */
-
-    else if(
-
-        text.includes("repuesto") ||
-        text.includes("ram") ||
-        text.includes("ssd") ||
-        text.includes("teclado")
-
-    ){
-
-        response = `
-
-        🖥️ Vendemos repuestos tecnológicos:
-
-        ✅ Memorias RAM  
-        ✅ SSD  
-        ✅ Teclados  
-        ✅ Componentes para PC
-
-        `;
-    }
-
-    /* SOPORTE */
-
-    else if(
-
-        text.includes("soporte") ||
-        text.includes("ayuda") ||
-        text.includes("tecnico")
-
-    ){
-
-        response = `
-
-        🛠️ Ofrecemos soporte técnico para:
-
-        ✅ PCs  
-        ✅ Laptops  
-        ✅ Instalaciones  
-        ✅ Configuración de software
-
-        `;
-    }
-
-    /* HORARIOS */
-
-    else if(
-
-        text.includes("horario") ||
-        text.includes("hora") ||
-        text.includes("atienden")
-
-    ){
-
-        response = `
-
-        ⏰ Puedes comunicarte con nosotros directamente por WhatsApp para consultar horarios de atención.
-
-        📲 350 455 5680
-
-        `;
-    }
-
-    /* DEFAULT */
-
-    else{
-
-        response = `
-
-        🤖 Lo siento, no tengo información sobre eso.
-
-        📲 Comunícate con nosotros directamente por WhatsApp:
-
-        <a
-        href="https://wa.me/573504555680"
-        target="_blank"
-        style="color:#2563eb;font-weight:bold;">
-
-        WhatsApp Red Tech
-
-        </a>
-
-        `;
-    }
-
-    addMessage(response,"bot");
+`;
 }
+
+else if(
+
+text.includes("software") ||
+text.includes("windows") ||
+text.includes("office")
+
+){
+
+response = `
+
+💻 Instalamos Windows,
+Office,
+drivers y antivirus.
+
+`;
+}
+
+else if(
+
+text.includes("repuestos") ||
+text.includes("ram") ||
+text.includes("ssd")
+
+){
+
+response = `
+
+🖥️ Vendemos RAM,
+SSD,
+teclados y componentes.
+
+`;
+}
+
+else if(
+
+text.includes("contacto") ||
+text.includes("whatsapp")
+
+){
+
+response = `
+
+📲 WhatsApp:
+
+<strong>350 455 5680</strong>
+
+`;
+}
+
+else{
+
+response = `
+
+🤖 No tengo información sobre eso.
+
+📲 Escríbenos por WhatsApp:
+
+<a
+href="https://wa.me/573504555680"
+target="_blank"
+style="color:#2563eb;font-weight:bold;">
+
+Abrir WhatsApp
+
+</a>
+
+`;
+}
+
+addMessage(response,"bot");
+}
+
 </script>
 
 </body>
-
 </html>
+```
