@@ -137,9 +137,10 @@ section{
     align-items:center;
     font-size:35px;
     color:white;
+    z-index:9999;
 }
 
-/* ========================= CHATBOT ========================= */
+/* ========================= CHATBOT PRO ========================= */
 
 .chat-floating{
     position:fixed;
@@ -154,7 +155,7 @@ section{
 }
 
 .chat-box{
-    width:320px;
+    width:330px;
     background:white;
     border-radius:15px;
     display:none;
@@ -168,10 +169,19 @@ section{
     padding:12px;
     display:flex;
     justify-content:space-between;
+    align-items:center;
+}
+
+.chat-header button{
+    background:none;
+    border:none;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
 }
 
 .messages{
-    height:250px;
+    height:260px;
     overflow-y:auto;
     padding:10px;
     color:black;
@@ -201,6 +211,7 @@ section{
     flex:1;
     padding:10px;
     border:none;
+    outline:none;
 }
 
 .chat-input button{
@@ -209,6 +220,18 @@ section{
     border:none;
     padding:10px;
     cursor:pointer;
+}
+
+/* BOTONES CHAT */
+.chat-box button{
+    margin:5px 5px 0 0;
+    padding:6px 10px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-size:12px;
 }
 
 </style>
@@ -233,9 +256,7 @@ section{
 </header>
 
 <section class="hero" id="inicio">
-
 <h2>RED TECH SOLUCIONES</h2>
-
 </section>
 
 <section id="servicios">
@@ -243,11 +264,9 @@ section{
 <h2>Servicios</h2>
 
 <div class="cards">
-
 <div class="card">Mantenimiento</div>
 <div class="card">Software</div>
 <div class="card">Repuestos</div>
-
 </div>
 
 </section>
@@ -269,7 +288,7 @@ section{
 <!-- WHATSAPP -->
 <a class="whatsapp-float" href="https://wa.me/573504555680">💬</a>
 
-<!-- CHATBOT -->
+<!-- CHATBOT PRO -->
 <div class="chat-floating">
 
 <img id="chatIcon"
@@ -286,7 +305,17 @@ Red Tech Bot
 <div class="messages" id="messages">
 
 <div class="message bot">
-Hola 👋 pregúntame sobre servicios
+👋 Hola, soy el bot de Red Tech.<br><br>
+🔧 Mantenimiento<br>
+💻 Software<br>
+🖥️ Repuestos<br>
+📲 Escribe o usa los botones abajo
+</div>
+
+<div class="message bot">
+<button onclick="quick('servicios')">Servicios</button>
+<button onclick="quick('precios')">Precios</button>
+<button onclick="quick('whatsapp')">WhatsApp</button>
 </div>
 
 </div>
@@ -305,7 +334,7 @@ Hola 👋 pregúntame sobre servicios
 
 <script>
 
-/* CHATBOT */
+/* CHATBOT PRO */
 
 const chatIcon = document.getElementById("chatIcon");
 const chatBox = document.getElementById("chatBox");
@@ -314,55 +343,70 @@ const sendBtn = document.getElementById("sendBtn");
 const userInput = document.getElementById("userInput");
 const messages = document.getElementById("messages");
 
-chatIcon.onclick = () => {
-    chatBox.style.display = "block";
-};
-
-toggleChat.onclick = () => {
-    chatBox.style.display = "none";
-};
+chatIcon.onclick = () => chatBox.style.display = "block";
+toggleChat.onclick = () => chatBox.style.display = "none";
 
 sendBtn.onclick = sendMessage;
+
+userInput.addEventListener("keypress",(e)=>{
+    if(e.key==="Enter") sendMessage();
+});
 
 function sendMessage(){
 
     const text = userInput.value.toLowerCase().trim();
     if(!text) return;
 
-    addMessage(text,"user");
-    userInput.value = "";
+    add(text,"user");
+    userInput.value="";
 
     setTimeout(()=>bot(text),500);
 }
 
-function addMessage(text,type){
+function add(text,type){
 
     const div = document.createElement("div");
     div.classList.add("message",type);
     div.innerHTML = text;
 
     messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
 }
 
 function bot(text){
 
-    let r = "";
+    let r="";
 
-    if(text.includes("mantenimiento")){
-        r = "🔧 Hacemos mantenimiento de PCs y laptops";
+    if(text.includes("mantenimiento")||text.includes("pc")){
+        r="🔧 Mantenimiento de computadores y laptops.";
     }
     else if(text.includes("software")){
-        r = "💻 Instalamos Windows y programas";
+        r="💻 Instalamos Windows y programas.";
     }
     else if(text.includes("repuesto")){
-        r = "🖥️ Vendemos RAM y SSD";
+        r="🖥️ RAM, SSD y componentes.";
     }
     else{
-        r = `📲 Escríbenos por WhatsApp:
+        r=`📲 Escríbenos por WhatsApp:
         <a href="https://wa.me/573504555680" target="_blank">Abrir</a>`;
     }
 
-    addMessage(r,"bot");
+    add(r,"bot");
+}
+
+function quick(option){
+
+    if(option==="servicios"){
+        add("🔧 Servicios: mantenimiento, software y repuestos","bot");
+    }
+
+    if(option==="precios"){
+        add("💰 Escríbenos por WhatsApp para cotización","bot");
+    }
+
+    if(option==="whatsapp"){
+        window.open("https://wa.me/573504555680","_blank");
+    }
 }
 
 </script>
